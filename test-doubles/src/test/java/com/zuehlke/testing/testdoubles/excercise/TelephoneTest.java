@@ -1,6 +1,11 @@
 package com.zuehlke.testing.testdoubles.excercise;
 
+import com.zuehlke.testing.testdoubles.exercise.Telephone;
 import org.junit.jupiter.api.Test;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
 
 public class TelephoneTest {
 
@@ -8,18 +13,15 @@ public class TelephoneTest {
 
 	@Test
 	public void testCall_busy_forwardToVoiceMail() {
-		// TODO implement VoiceMailServiceSpy so that this test can run
-
 		// arrange
-		// VoiceMailServiceSpy spy = new VoiceMailServiceSpy();
-		// Telephone testee = new Telephone(spy);
-		// testee.setBusy(true);
+		VoiceMailServiceSpy spy = new VoiceMailServiceSpy();
+		Telephone testee = new Telephone(spy);
+		testee.setBusy(true);
 
 		// act
-		// testee.call(NUMBER);
+		testee.call(NUMBER);
 
 		// assert
-		// assertThat(spy.callingNumber, is(equalTo(NUMBER)));
-
+		assertThat(spy.getCallingNumber(), is(equalTo(NUMBER)));
 	}
 }
