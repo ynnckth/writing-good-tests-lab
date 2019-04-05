@@ -1,6 +1,6 @@
 test {
     useJUnitPlatform {
         includeTags 'fast'
-        excludeTags 'slow'
+        excludeTags 'slow', 'superslow'
     }
 }
