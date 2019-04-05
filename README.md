@@ -1,3 +1,6 @@
+Run all tests of a specific module directory with:
+> `./gradlew -p <dir> test`
+
 ###Topics Covered
 
 - JUnit 5 (Jupiter)
