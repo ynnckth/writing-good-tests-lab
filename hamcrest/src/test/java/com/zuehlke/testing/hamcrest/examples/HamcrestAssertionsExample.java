@@ -1,17 +1,16 @@
 package com.zuehlke.testing.hamcrest.examples;
 
-import static com.zuehlke.testing.hamcrest.examples.CustomMatchers.*;
-import static org.hamcrest.MatcherAssert.*;
-import static org.hamcrest.Matchers.*;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import com.zuehlke.testing.hamcrest.Person;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-
-import com.zuehlke.testing.hamcrest.Person;
+import static com.zuehlke.testing.hamcrest.examples.CustomMatchers.hasAge;
+import static com.zuehlke.testing.hamcrest.examples.CustomMatchers.hasAgeFeatureMatcher;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 
 public class HamcrestAssertionsExample {
 
