@@ -10,7 +10,6 @@ package com.zuehlke.testing.coverage.vendingmachine;
  */
 public class VendingMachine {
 
-	// How much is one bottle?
 	private int pricePerBottle;
 
 	// Each Xth bottle is for free
@@ -20,7 +19,6 @@ public class VendingMachine {
 	private int nof1CHFCoins;
 
 	public VendingMachine(int nof1CHFCoins, int pricePerBottle, int eachXthBottleForFree) {
-
 		this.nof1CHFCoins = nof1CHFCoins;
 		this.pricePerBottle = pricePerBottle;
 		this.eachXthBottleForFree = eachXthBottleForFree;
@@ -43,7 +41,7 @@ public class VendingMachine {
 		int change = 0;
 
 		// was enough money entered?
-		if (moneyEntered > calculatePrice(nofBottles)) {
+		if (moneyEntered >= calculatePrice(nofBottles)) {
 
 			// was more than just enough money entered
 			int tooMuchPaid = (moneyEntered - calculatePrice(nofBottles));
@@ -69,10 +67,9 @@ public class VendingMachine {
 	 * @param nofBottles
 	 * @return
 	 */
-	private int calculatePrice(int nofBottles) {
-		int nofBottlesForFree = nofBottles % eachXthBottleForFree;
+	int calculatePrice(int nofBottles) {
+		int nofBottlesForFree = nofBottles / eachXthBottleForFree;
 		return (nofBottles - nofBottlesForFree) * pricePerBottle;
-
 	}
 
 	/**
