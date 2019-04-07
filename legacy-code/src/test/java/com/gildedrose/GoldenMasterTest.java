@@ -16,13 +16,14 @@ class GoldenMasterTest {
 
     @Test
     void testGoldenMaster() throws IOException, URISyntaxException {
-        //act
         String result = runScenario(31);
-        //assert
+
         String expected = new String(Files.readAllBytes(Paths.get(ClassLoader.getSystemResource("GoldenMaster.txt").toURI())));
+
         assertThat(result, is(equalTo(expected)));
     }
 
+    // used to generate the golden master
     public static void main(String[] args) {
         System.out.println(runScenario(31));
     }
