@@ -1,7 +1,5 @@
 package com.gildedrose;
 
-import java.util.Arrays;
-
 class GildedRose {
 
     private final int MAX_QUALITY = 50;
@@ -16,10 +14,11 @@ class GildedRose {
         this.items = items;
     }
 
+    // TODO: refactor spaghetti code and introduce new item type "Conjured Item"
+    //  which degrades in Quality twice as fast as normal items
     public void updateQuality() {
         for (Item item : items) {
-            if (!item.name.equals(AGED_BRIE)
-                    && !item.name.equals(CONCERT_BACKSTAGE_PASSES)) {
+            if (!item.name.equals(AGED_BRIE) && !item.name.equals(CONCERT_BACKSTAGE_PASSES)) {
                 if (item.quality > 0) {
                     if (!item.name.equals(SULFURAS)) {
                         item.quality = item.quality - 1;
